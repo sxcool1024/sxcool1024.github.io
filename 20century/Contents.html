@@ -115,26 +115,16 @@
       color:#444;
       text-align:right;
     }
-
-    /* 新增：顶部和底部按钮居中样式 */
-    .center-buttons {
-      text-align: center;
-      margin: 15px 0;
-    }
-    .center-buttons .btn {
-      margin: 0 6px;
-    }
   </style>
 </head>
 <body>
-
-  <!-- 顶部按钮 -->
-  <div class="center-buttons">
-    <button class="btn" id="toBottomBtn">一键到底</button>
-    <a href="index.html" class="btn secondary">返回主页</a>
-  </div>
   
   <div class="wrap">
+    <!-- 顶部按钮 -->
+    <div style="display:flex; justify-content:center; gap:10px; margin-bottom:12px;">
+      <button class="btn" id="toBottomBtn">一键到底</button>
+      <a href="/" class="btn secondary">返回主页</a>
+    </div>
     <div class="card">
       <h1>项目简介</h1>
       <p class="intro">
@@ -249,27 +239,14 @@
 <li class="item"><span class="title">102-20世纪中华歌坛名人百集珍藏版：王秀芬、于文华、尹相杰</span><div class="controls"><a class="btn btn-view" href="#">查看</a><a class="btn" href="https://474b.com/file/25713053-437739903">下载</a></div></li>
 </ul> 
       <div class="foot">有优质音乐资源可投稿 sxcool1024@gmail.com</div> 
-      
+      <!-- 底部按钮 -->
+      <div style="display:flex; justify-content:center; gap:10px; margin-top:12px;">
+        <button class="btn" id="toTopBtn">回到顶部</button>
+        <a href="/" class="btn secondary">返回主页</a>
+      </div>
+    
+    </div>      
     </div> 
   </div> 
-
-<!-- 底部按钮 -->
-  <div class="center-buttons">
-    <button class="btn" id="toTopBtn">回到顶部</button>
-    <a href="index.html" class="btn secondary">返回主页</a>
-  </div>
-
-  <script>
-    // 一键到底
-    document.getElementById('toBottomBtn').addEventListener('click', function () {
-      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
-    });
-
-    // 回到顶部
-    document.getElementById('toTopBtn').addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-  
 </body> 
 </html>
