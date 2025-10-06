@@ -1,1 +1,878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>项目与目录列表</title>
+  <style>
+    :root{
+      --max-width: 980px;
+      --accent: #0078d7;
+      --btn-font-size: 15px;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      padding:0;
+      background: pink;
+      font-family:"Microsoft YaHei","微软雅黑",Arial,sans-serif;
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      scroll-behavior:smooth;
+    }
+
+    .wrap{
+      max-width:var(--max-width);
+      margin:30px auto;
+      padding:20px;
+      box-sizing:border-box;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.95);
+      border-radius:10px;
+      padding:18px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    h1{
+      margin:0 0 12px 0;
+      font-size:20px;
+      text-align:center;
+    }
+
+    /* 项目介绍（约100字） */
+    .intro{
+      font-size:15px;
+      line-height:1.8;
+      color:#2a2a2a;
+      margin-bottom:18px;
+    }
+
+    /* 分割线 */
+    .sep{
+      height:1px;
+      background:linear-gradient(90deg,transparent,#ddd,transparent);
+      margin:18px 0;
+      border-radius:1px;
+    }
+
+    /* 目录列表样式 */
+    .list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:10px;
+      border-radius:8px;
+      background: rgba(250,250,250,0.8);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+    }
+
+    .item .title{
+      flex:1 1 auto;
+      font-size:14px;
+      line-height:1.4;
+      color:#111;
+      word-break:break-word;
+      margin-right:12px;
+    }
+
+    .controls{
+      flex:0 0 auto;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:8px 14px;
+      font-size:var(--btn-font-size);
+      text-decoration:none;
+      border-radius:6px;
+      border:0;
+      cursor:pointer;
+      background:var(--accent);
+      color:#fff;
+      transition:background .18s;
+    }
+    .btn:hover{ background:#005fa3; }
+
+    .btn.secondary{
+      background:#6c757d;
+    }
+    .btn.secondary:hover{ background:#545b62; }
+
+    /* 响应式：窄屏时按钮换行，标题占满 */
+    @media (max-width:640px){
+      .item{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .controls{
+        width:100%;
+        justify-content:flex-start;
+      }
+      .controls .btn{ font-size:14px; padding:8px 12px; }
+    }
+
+    /* 小提示、版权等 */
+    .foot{
+      margin-top:18px;
+      font-size:13px;
+      color:#444;
+      text-align:right;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>项目简介</h1>
+
+      <!-- 约100字的项目介绍 -->
+      <p class="intro">
+本项目旨在整理与展示一套经典唱片与抓取日志的资料，包含专辑信息、曲目列表及抓取记录示例，便于收藏、研究与下载使用。页面采用简洁布局与可直接点击的查看/下载按钮，方便在本地或部署站点中快速访问与保存所需文件。
+      </p>
+
+      <div class="sep" role="separator" aria-hidden="true"></div>
+
+      <!-- 102 条文字目录，每条后跟查看与下载按钮 -->
+      <ul class="list" aria-label="目录列表">
+<!-- 下面为 102 条目录项（编号 1 到 102） -->
+<!-- 每条示例：标题为“目录 X - 示例标题”，查看跳转 contentX.html，下载跳转 download/fileX.zip -->
+<!-- 开始目录项 -->
+<li class="item">
+  <div class="title">目录 1 - 示例标题 1</div>
+  <div class="controls">
+    <a class="btn" href="content1.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file1.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 2 - 示例标题 2</div>
+  <div class="controls">
+    <a class="btn" href="content2.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file2.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 3 - 示例标题 3</div>
+  <div class="controls">
+    <a class="btn" href="content3.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file3.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 4 - 示例标题 4</div>
+  <div class="controls">
+    <a class="btn" href="content4.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file4.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 5 - 示例标题 5</div>
+  <div class="controls">
+    <a class="btn" href="content5.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file5.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 6 - 示例标题 6</div>
+  <div class="controls">
+    <a class="btn" href="content6.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file6.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 7 - 示例标题 7</div>
+  <div class="controls">
+    <a class="btn" href="content7.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file7.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 8 - 示例标题 8</div>
+  <div class="controls">
+    <a class="btn" href="content8.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file8.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 9 - 示例标题 9</div>
+  <div class="controls">
+    <a class="btn" href="content9.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file9.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 10 - 示例标题 10</div>
+  <div class="controls">
+    <a class="btn" href="content10.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file10.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 11 - 示例标题 11</div>
+  <div class="controls">
+    <a class="btn" href="content11.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file11.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 12 - 示例标题 12</div>
+  <div class="controls">
+    <a class="btn" href="content12.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file12.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 13 - 示例标题 13</div>
+  <div class="controls">
+    <a class="btn" href="content13.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file13.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 14 - 示例标题 14</div>
+  <div class="controls">
+    <a class="btn" href="content14.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file14.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 15 - 示例标题 15</div>
+  <div class="controls">
+    <a class="btn" href="content15.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file15.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 16 - 示例标题 16</div>
+  <div class="controls">
+    <a class="btn" href="content16.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file16.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 17 - 示例标题 17</div>
+  <div class="controls">
+    <a class="btn" href="content17.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file17.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 18 - 示例标题 18</div>
+  <div class="controls">
+    <a class="btn" href="content18.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file18.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 19 - 示例标题 19</div>
+  <div class="controls">
+    <a class="btn" href="content19.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file19.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 20 - 示例标题 20</div>
+  <div class="controls">
+    <a class="btn" href="content20.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file20.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 21 - 示例标题 21</div>
+  <div class="controls">
+    <a class="btn" href="content21.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file21.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 22 - 示例标题 22</div>
+  <div class="controls">
+    <a class="btn" href="content22.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file22.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 23 - 示例标题 23</div>
+  <div class="controls">
+    <a class="btn" href="content23.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file23.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 24 - 示例标题 24</div>
+  <div class="controls">
+    <a class="btn" href="content24.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file24.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 25 - 示例标题 25</div>
+  <div class="controls">
+    <a class="btn" href="content25.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file25.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 26 - 示例标题 26</div>
+  <div class="controls">
+    <a class="btn" href="content26.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file26.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 27 - 示例标题 27</div>
+  <div class="controls">
+    <a class="btn" href="content27.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file27.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 28 - 示例标题 28</div>
+  <div class="controls">
+    <a class="btn" href="content28.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file28.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 29 - 示例标题 29</div>
+  <div class="controls">
+    <a class="btn" href="content29.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file29.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 30 - 示例标题 30</div>
+  <div class="controls">
+    <a class="btn" href="content30.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file30.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 31 - 示例标题 31</div>
+  <div class="controls">
+    <a class="btn" href="content31.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file31.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 32 - 示例标题 32</div>
+  <div class="controls">
+    <a class="btn" href="content32.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file32.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 33 - 示例标题 33</div>
+  <div class="controls">
+    <a class="btn" href="content33.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file33.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 34 - 示例标题 34</div>
+  <div class="controls">
+    <a class="btn" href="content34.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file34.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 35 - 示例标题 35</div>
+  <div class="controls">
+    <a class="btn" href="content35.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file35.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 36 - 示例标题 36</div>
+  <div class="controls">
+    <a class="btn" href="content36.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file36.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 37 - 示例标题 37</div>
+  <div class="controls">
+    <a class="btn" href="content37.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file37.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 38 - 示例标题 38</div>
+  <div class="controls">
+    <a class="btn" href="content38.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file38.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 39 - 示例标题 39</div>
+  <div class="controls">
+    <a class="btn" href="content39.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file39.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 40 - 示例标题 40</div>
+  <div class="controls">
+    <a class="btn" href="content40.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file40.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 41 - 示例标题 41</div>
+  <div class="controls">
+    <a class="btn" href="content41.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file41.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 42 - 示例标题 42</div>
+  <div class="controls">
+    <a class="btn" href="content42.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file42.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 43 - 示例标题 43</div>
+  <div class="controls">
+    <a class="btn" href="content43.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file43.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 44 - 示例标题 44</div>
+  <div class="controls">
+    <a class="btn" href="content44.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file44.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 45 - 示例标题 45</div>
+  <div class="controls">
+    <a class="btn" href="content45.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file45.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 46 - 示例标题 46</div>
+  <div class="controls">
+    <a class="btn" href="content46.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file46.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 47 - 示例标题 47</div>
+  <div class="controls">
+    <a class="btn" href="content47.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file47.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 48 - 示例标题 48</div>
+  <div class="controls">
+    <a class="btn" href="content48.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file48.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 49 - 示例标题 49</div>
+  <div class="controls">
+    <a class="btn" href="content49.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file49.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 50 - 示例标题 50</div>
+  <div class="controls">
+    <a class="btn" href="content50.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file50.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 51 - 示例标题 51</div>
+  <div class="controls">
+    <a class="btn" href="content51.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file51.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 52 - 示例标题 52</div>
+  <div class="controls">
+    <a class="btn" href="content52.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file52.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 53 - 示例标题 53</div>
+  <div class="controls">
+    <a class="btn" href="content53.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file53.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 54 - 示例标题 54</div>
+  <div class="controls">
+    <a class="btn" href="content54.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file54.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 55 - 示例标题 55</div>
+  <div class="controls">
+    <a class="btn" href="content55.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file55.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 56 - 示例标题 56</div>
+  <div class="controls">
+    <a class="btn" href="content56.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file56.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 57 - 示例标题 57</div>
+  <div class="controls">
+    <a class="btn" href="content57.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file57.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 58 - 示例标题 58</div>
+  <div class="controls">
+    <a class="btn" href="content58.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file58.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 59 - 示例标题 59</div>
+  <div class="controls">
+    <a class="btn" href="content59.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file59.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 60 - 示例标题 60</div>
+  <div class="controls">
+    <a class="btn" href="content60.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file60.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 61 - 示例标题 61</div>
+  <div class="controls">
+    <a class="btn" href="content61.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file61.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 62 - 示例标题 62</div>
+  <div class="controls">
+    <a class="btn" href="content62.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file62.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 63 - 示例标题 63</div>
+  <div class="controls">
+    <a class="btn" href="content63.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file63.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 64 - 示例标题 64</div>
+  <div class="controls">
+    <a class="btn" href="content64.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file64.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 65 - 示例标题 65</div>
+  <div class="controls">
+    <a class="btn" href="content65.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file65.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 66 - 示例标题 66</div>
+  <div class="controls">
+    <a class="btn" href="content66.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file66.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 67 - 示例标题 67</div>
+  <div class="controls">
+    <a class="btn" href="content67.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file67.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 68 - 示例标题 68</div>
+  <div class="controls">
+    <a class="btn" href="content68.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file68.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 69 - 示例标题 69</div>
+  <div class="controls">
+    <a class="btn" href="content69.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file69.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 70 - 示例标题 70</div>
+  <div class="controls">
+    <a class="btn" href="content70.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file70.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 71 - 示例标题 71</div>
+  <div class="controls">
+    <a class="btn" href="content71.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file71.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 72 - 示例标题 72</div>
+  <div class="controls">
+    <a class="btn" href="content72.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file72.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 73 - 示例标题 73</div>
+  <div class="controls">
+    <a class="btn" href="content73.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file73.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 74 - 示例标题 74</div>
+  <div class="controls">
+    <a class="btn" href="content74.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file74.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 75 - 示例标题 75</div>
+  <div class="controls">
+    <a class="btn" href="content75.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file75.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 76 - 示例标题 76</div>
+  <div class="controls">
+    <a class="btn" href="content76.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file76.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 77 - 示例标题 77</div>
+  <div class="controls">
+    <a class="btn" href="content77.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file77.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 78 - 示例标题 78</div>
+  <div class="controls">
+    <a class="btn" href="content78.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file78.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 79 - 示例标题 79</div>
+  <div class="controls">
+    <a class="btn" href="content79.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file79.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 80 - 示例标题 80</div>
+  <div class="controls">
+    <a class="btn" href="content80.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file80.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 81 - 示例标题 81</div>
+  <div class="controls">
+    <a class="btn" href="content81.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file81.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 82 - 示例标题 82</div>
+  <div class="controls">
+    <a class="btn" href="content82.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file82.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 83 - 示例标题 83</div>
+  <div class="controls">
+    <a class="btn" href="content83.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file83.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 84 - 示例标题 84</div>
+  <div class="controls">
+    <a class="btn" href="content84.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file84.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 85 - 示例标题 85</div>
+  <div class="controls">
+    <a class="btn" href="content85.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file85.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 86 - 示例标题 86</div>
+  <div class="controls">
+    <a class="btn" href="content86.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file86.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 87 - 示例标题 87</div>
+  <div class="controls">
+    <a class="btn" href="content87.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file87.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 88 - 示例标题 88</div>
+  <div class="controls">
+    <a class="btn" href="content88.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file88.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 89 - 示例标题 89</div>
+  <div class="controls">
+    <a class="btn" href="content89.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file89.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 90 - 示例标题 90</div>
+  <div class="controls">
+    <a class="btn" href="content90.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file90.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 91 - 示例标题 91</div>
+  <div class="controls">
+    <a class="btn" href="content91.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file91.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 92 - 示例标题 92</div>
+  <div class="controls">
+    <a class="btn" href="content92.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file92.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 93 - 示例标题 93</div>
+  <div class="controls">
+    <a class="btn" href="content93.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file93.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 94 - 示例标题 94</div>
+  <div class="controls">
+    <a class="btn" href="content94.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file94.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 95 - 示例标题 95</div>
+  <div class="controls">
+    <a class="btn" href="content95.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file95.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 96 - 示例标题 96</div>
+  <div class="controls">
+    <a class="btn" href="content96.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file96.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 97 - 示例标题 97</div>
+  <div class="controls">
+    <a class="btn" href="content97.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file97.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 98 - 示例标题 98</div>
+  <div class="controls">
+    <a class="btn" href="content98.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file98.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 99 - 示例标题 99</div>
+  <div class="controls">
+    <a class="btn" href="content99.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file99.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 100 - 示例标题 100</div>
+  <div class="controls">
+    <a class="btn" href="content100.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file100.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 101 - 示例标题 101</div>
+  <div class="controls">
+    <a class="btn" href="content101.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file101.zip" download>下载</a>
+  </div>
+</li>
+<li class="item">
+  <div class="title">目录 102 - 示例标题 102</div>
+  <div class="controls">
+    <a class="btn" href="content102.html" target="_blank" rel="noopener">查看</a>
+    <a class="btn secondary" href="download/file102.zip" download>下载</a>
+  </div>
+</li>
+<!-- 目录项结束 -->
+      </ul>
+
+      <div class="foot">© 示例项目 · 如需自定义链接或标题我可帮你替换</div>
+    </div>
+  </div>
+</body>
+</html>
 
