@@ -115,9 +115,35 @@
       color:#444;
       text-align:right;
     }
+
+    /* 固定四角按钮样式 */
+    .corner-btn {
+      position: fixed;
+      z-index: 999;
+      padding: 8px 16px;
+      font-size: 14px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .18s;
+    }
+    .corner-btn:hover {
+      background: #005fa3;
+    }
+    .top-left { top: 10px; left: 10px; }
+    .top-right { top: 10px; right: 10px; }
+    .bottom-left { bottom: 10px; left: 10px; }
+    .bottom-right { bottom: 10px; right: 10px; }
+
   </style>
 </head>
 <body>
+  <!-- 顶部按钮 -->
+  <a href="#" class="corner-btn top-left">返回主页</a>
+  <a href="#bottom" class="corner-btn top-right">一键到底</a>
+  
   <div class="wrap">
     <div class="card">
       <h1>项目简介</h1>
@@ -236,5 +262,10 @@
 <div class="foot">有优质音乐资源可投稿 sxcool1024@gmail.com</div>
     </div>
   </div>
+
+<!-- 底部按钮 -->
+  <a href="#" class="corner-btn bottom-left">返回主页</a>
+  <a href="#top" class="corner-btn bottom-right" onclick="window.scrollTo({top:0, behavior:'smooth'});">回到顶部</a>
+  
 </body>
 </html>
