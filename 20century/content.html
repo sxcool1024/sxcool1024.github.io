@@ -11,17 +11,40 @@
       font-family:"Microsoft YaHei","微软雅黑",Arial,sans-serif;
       background:#fff;
       color:#222;
+      scroll-behavior:smooth;
     }
     .container{
       max-width:900px;
-      margin:40px auto;
+      margin:0 auto;
       padding:20px;
       box-sizing:border-box;
     }
+
+    /* 顶部按钮组（与图片左对齐） */
+    .top-buttons{
+      display:flex;
+      gap:15px;
+      margin-bottom:15px;
+    }
+    .top-buttons a{
+      display:inline-block;
+      background-color:#0078d7;
+      color:#fff;
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      transition:background 0.3s;
+      font-size:15px;
+    }
+    .top-buttons a:hover{
+      background-color:#005fa3;
+    }
+
+    /* 图片展示 */
     .images{
       display:flex;
       flex-direction:column;
-      align-items:center;
+      align-items:flex-start; /* 与左侧对齐 */
       gap:20px;
       margin-bottom:30px;
     }
@@ -31,6 +54,12 @@
       height:auto;
       border-radius:10px;
       box-shadow:0 6px 14px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      font-size:20px;
+      text-align:center;
+      margin:0 0 20px 0;
     }
     .text-block{
       background:rgba(255,255,255,0.9);
@@ -47,28 +76,40 @@
       background:linear-gradient(90deg,transparent,#ddd,transparent);
       margin:20px 0;
     }
-    h1{
-      font-size:20px;
-      text-align:center;
-      margin:0 0 20px 0;
+
+    /* 底部按钮 */
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:40px;
+    }
+    .buttons a{
+      display:inline-block;
+      background-color:#0078d7;
+      color:#fff;
+      padding:10px 20px;
+      border-radius:6px;
+      text-decoration:none;
+      transition:background 0.3s;
+      font-size:15px;
+    }
+    .buttons a:hover{
+      background-color:#005fa3;
     }
   </style>
 </head>
-<body>
+<body id="top">
+
   <div class="container">
-    
-    <!-- 顶部三个按钮 -->
-    <div class="buttons">
-      <!-- 下载按钮（示例：跳转到下载文件） -->
-      <a href="https://url53.ctfile.com/f/25713053-8446765099-8d178e?p=1024" download>下载</a>
 
-      <!-- 返回目录按钮（示例：返回 index.html） -->
-      <a href="../index.html">返回目录</a>
-
-      <!-- 一键到底按钮（锚点） -->
-      <a href="#down">一键到底</a>
+    <!-- 顶部按钮（左对齐，与图片对齐） -->
+    <div class="top-buttons">
+      <a href="index.html">返回目录</a>
+      <a href="#bottom">一键到底</a>
     </div>
 
+    <!-- 图片展示 -->
     <div class="images" aria-label="相关图片">
       <a href="https://pic.moebox.io/image/20%E4%B8%96%E7%BA%AA%E4%B8%AD%E5%8D%8E%E6%AD%8C%E5%9D%9B%E5%90%8D%E4%BA%BA%E7%99%BE%E9%9B%86%E7%8F%8D%E8%97%8F%E7%89%88-%E5%90%B4%E9%9B%81%E6%B3%BDImage1.427SrO"><img src="https://image.acg.lol/file/2025/10/06/20-Image1.jpg" alt="20世纪中华歌坛名人百集珍藏版 吴雁泽Image1" border="0"></a>
       <a href="https://pic.moebox.io/image/20%E4%B8%96%E7%BA%AA%E4%B8%AD%E5%8D%8E%E6%AD%8C%E5%9D%9B%E5%90%8D%E4%BA%BA%E7%99%BE%E9%9B%86%E7%8F%8D%E8%97%8F%E7%89%88-%E5%90%B4%E9%9B%81%E6%B3%BDImage2.4271iU"><img src="https://image.acg.lol/file/2025/10/06/20-Image2.jpg" alt="20世纪中华歌坛名人百集珍藏版 吴雁泽Image2" border="0"></a>
@@ -103,82 +144,27 @@
 12.汾河流水哗啦啦
 13.满载友谊去远航
 14.我从山里回
-15.再见了,大别山
+15.再见了,大别山Exact Audio Copy V0.99 prebeta 1 from 25. May 2007
     </div>
 
     <hr class="sep">
 
     <div class="text-block">
-Exact Audio Copy V0.99 prebeta 1 from 25. May 2007
 EAC 抓取日志文件从20. 十一月 2010, 12:18
 
 吴雁泽 / 20世纪中华歌坛名人百集珍藏版
-
-使用驱动器  ：BENQ    DVD-ROM 16X   Adapter: 0  ID: 1
-
-读取模式     : 保护
-使用精确流   : 是
-废除音频缓冲 : 是
-使用 C2 指针 : 否
-
-读取偏移校正                   : 738
-读取 Lead-In 和 Lead-Out       : 否
-用静音填充抓取中丢失偏移的采样 : 是
-去除首尾静音块                 : 否
-已用接口                       : Win NT 及 2000 本地 Win32 接口
-
-所用输出格式 : 内部 WAV 函数
-样本格式     : 44.100 Hz;16 Bit;立体声
-
-
-被抓轨 CD 的 TOC
-
-     音轨 |   开始   |   长度   | 起始扇区 | 结尾扇区 
-    --------------------------------------------------
-       1  |  0:00.00 |  3:33.02 |       0  |   15976  
-       2  |  3:33.02 |  2:32.50 |   15977  |   27426  
-       3  |  6:05.52 |  5:53.20 |   27427  |   53921  
-       4  | 11:58.72 |  3:21.33 |   53922  |   69029  
-       5  | 15:20.30 |  4:18.70 |   69030  |   88449  
-       6  | 19:39.25 |  1:59.52 |   88450  |   97426  
-       7  | 21:39.02 |  4:32.58 |   97427  |  117884  
-       8  | 26:11.60 |  7:02.65 |  117885  |  149599  
-       9  | 33:14.50 |  3:40.30 |  149600  |  166129  
-      10  | 36:55.05 |  4:26.72 |  166130  |  186151  
-      11  | 41:22.02 |  6:16.55 |  186152  |  214406  
-      12  | 47:38.57 |  3:49.58 |  214407  |  231639  
-      13  | 51:28.40 |  2:30.65 |  231640  |  242954  
-      14  | 53:59.30 |  2:34.65 |  242955  |  254569  
-      15  | 56:34.20 |  5:20.40 |  254570  |  278609  
-
-范围状态及错误
-
-已选择范围
-
-     文件名 E:\文件夹\20世纪中华歌坛名人百集珍藏版-吴雁泽[lwg188原创]\吴雁泽 - 20世纪中华歌坛名人百集珍藏版.wav
-
-     峰值电平 100.0 %
-     范围质量 99.9 %
-     复制 CRC 9D04F393
-     复制成功
-
-没有错误发生
-
+...
 状态报告结尾
     </div>
-    
-    <!-- 底部三个按钮 -->
-    <div class="buttons">
-      <!-- 下载按钮（示例：跳转到下载文件） -->
-      <a href="https://url53.ctfile.com/f/25713053-8446765099-8d178e?p=1024" download>下载</a>
 
-      <!-- 返回目录按钮（示例：返回 index.html） -->
-      <a href="../index.html">返回目录</a>
-
-      <!-- 回到顶部按钮（锚点） -->
+    <!-- 底部按钮 -->
+    <div id="bottom" class="buttons">
+      <a href="download/吴雁泽专辑.zip" download>下载</a>
+      <a href="index.html">返回目录</a>
       <a href="#top">回到顶部</a>
     </div>
-    
+
   </div>
+
 </body>
 </html>
