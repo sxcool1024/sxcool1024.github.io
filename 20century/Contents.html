@@ -116,23 +116,22 @@
       text-align:right;
     }
 
-    /* === 新增顶部/底部按钮样式 === */
-    .page-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin: 16px auto;
+    /* 新增：顶部和底部按钮居中样式 */
+    .center-buttons {
       text-align: center;
+      margin: 15px 0;
+    }
+    .center-buttons .btn {
+      margin: 0 6px;
     }
   </style>
 </head>
 <body>
 
-  <!-- 顶部按钮区域 -->
-  <div class="page-buttons">
+  <!-- 顶部按钮 -->
+  <div class="center-buttons">
     <button class="btn" id="toBottomBtn">一键到底</button>
-    <a href="/" class="btn secondary">返回主页</a>
+    <a href="index.html" class="btn secondary">返回主页</a>
   </div>
   
   <div class="wrap">
@@ -254,20 +253,20 @@
     </div> 
   </div> 
 
-<!-- 底部按钮区域 -->
-  <div class="page-buttons">
+<!-- 底部按钮 -->
+  <div class="center-buttons">
     <button class="btn" id="toTopBtn">回到顶部</button>
-    <a href="/" class="btn secondary">返回主页</a>
+    <a href="index.html" class="btn secondary">返回主页</a>
   </div>
 
   <script>
     // 一键到底
-    document.getElementById('toBottomBtn').addEventListener('click', () => {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    document.getElementById('toBottomBtn').addEventListener('click', function () {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
     });
 
     // 回到顶部
-    document.getElementById('toTopBtn').addEventListener('click', () => {
+    document.getElementById('toTopBtn').addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
