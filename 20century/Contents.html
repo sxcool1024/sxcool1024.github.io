@@ -248,5 +248,20 @@
     </div>      
     </div> 
   </div> 
+
+<script>
+    // 回到顶部
+    document.getElementById('toTopBtn').addEventListener('click', function(){
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 一键到底
+    document.getElementById('toBottomBtn').addEventListener('click', function(){
+      // 滚动到 .wrap 最底部
+      const wrap = document.querySelector('.wrap');
+      window.scrollTo({ top: wrap.scrollHeight, behavior: 'smooth' });
+    });
+  </script>
+  
 </body> 
 </html>
