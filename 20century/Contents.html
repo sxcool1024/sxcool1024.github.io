@@ -115,9 +115,26 @@
       color:#444;
       text-align:right;
     }
+
+    /* === 新增顶部/底部按钮样式 === */
+    .page-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin: 16px auto;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
+
+  <!-- 顶部按钮区域 -->
+  <div class="page-buttons">
+    <button class="btn" id="toBottomBtn">一键到底</button>
+    <a href="/" class="btn secondary">返回主页</a>
+  </div>
+  
   <div class="wrap">
     <div class="card">
       <h1>项目简介</h1>
@@ -236,5 +253,24 @@
       
     </div> 
   </div> 
+
+<!-- 底部按钮区域 -->
+  <div class="page-buttons">
+    <button class="btn" id="toTopBtn">回到顶部</button>
+    <a href="/" class="btn secondary">返回主页</a>
+  </div>
+
+  <script>
+    // 一键到底
+    document.getElementById('toBottomBtn').addEventListener('click', () => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
+
+    // 回到顶部
+    document.getElementById('toTopBtn').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  
 </body> 
 </html>
